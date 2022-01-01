@@ -13,7 +13,7 @@ import styled from "styled-components";
 
 const Tittle = styled.h2`
 font: oblique bold 120% cursive;
-color: #00FFF5;
+color: #ffff;
 font-size: 30px;
 `;
 
@@ -30,7 +30,7 @@ const Pokemon = ({ pokemon }) => {
     .pop();
   return (
     <SubTittle>
-      {id}_. <Link href={`/pokemones/${id}`}>{pokemon.name.toUpperCase()}</Link>
+      {id}. <Link href={`/pokemones/${id}`}>{pokemon.name.toUpperCase()}</Link>
     </SubTittle>
   );
 };

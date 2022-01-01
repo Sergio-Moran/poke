@@ -27,13 +27,13 @@ font-size: 30px;
 
 const HacheM = styled.h3`
 font: oblique bold 120% cursive;
-color: #00ADB5;
+color: #ffff;
 cursor: pointer;
 `;
 
 const Pokemon = ({ data }) => {
   const router = useRouter();
-  console.log(router);
+  console.log(data);
 
   if (router.isFallback) {
     return <p>Cargando...</p>;
