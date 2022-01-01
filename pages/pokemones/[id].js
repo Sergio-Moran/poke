@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 /**
  * Para poder incluir imagenes que no se encuentren dentro de la carpeta
@@ -13,6 +14,23 @@ import { useRouter } from "next/router";
  * de ser llamado por el usuario.
  * Esto funciona ya que le estamos pasando los fallback como verdaderos.
  */
+ const Content = styled.div`
+ padding: 20px 25px;
+ text-align: center;
+`;
+
+const Hache = styled.h1`
+font: oblique bold 120% cursive;
+color: #00FFF5;
+font-size: 30px;
+`;
+
+const HacheM = styled.h3`
+font: oblique bold 120% cursive;
+color: #00ADB5;
+cursor: pointer;
+`;
+
 const Pokemon = ({ data }) => {
   const router = useRouter();
   console.log(router);
@@ -21,13 +39,17 @@ const Pokemon = ({ data }) => {
     return <p>Cargando...</p>;
   }
   return (
-    <div>
-      <h1>
+    <Content>
+      <Hache>
         {data.name.toUpperCase()} numero #{data.id}
-      </h1>
+      </Hache>
       <Image src={data.sprites.front_default} width={400} height={400} />
-      <Link href="/">Volver al inicio :D</Link>
-    </div>
+      <Link href="/">
+        <HacheM>
+          ⬅️Volver al Inicio.
+        </HacheM>
+      </Link>
+    </Content>
   );
 };
 
