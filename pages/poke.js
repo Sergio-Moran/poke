@@ -56,7 +56,7 @@ export default function Pokemones() {
   console.log(pokemones);
   return (
     <Content>
-      <Tittle data-testid={id}>Mi App de Pokemones hola mundo</Tittle>
+      <Tittle data-testid={id}>Mi App de Pokemones</Tittle>
       <ul>
         {pokemones.map((pokemon) => (
           <Pokemon pokemon={pokemon} key={pokemon.name} />
